@@ -2,7 +2,7 @@
 
 from pyspark.sql.functions import sum
 
-silver_df = spark.table("silver_orders")
+silver_df = spark.table("pyspark_pipeline.silver_orders")
 
 gold_df = silver_df.groupBy("product_name").agg(
     sum("total_sales").alias("revenue")
@@ -10,4 +10,4 @@ gold_df = silver_df.groupBy("product_name").agg(
 
 gold_df.write.format("delta") \
     .mode("overwrite") \
-    .saveAsTable("gold_product_sales")
+    .saveAsTable("pyspark_pipeline.gold_product_sales")
