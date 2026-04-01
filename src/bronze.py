@@ -1,7 +1,7 @@
 # Bronze Layer
 
 df = spark.read.csv(
-    "/Workspace/Repos/your_email/pyspark-data-pipeline/data/orders.csv",
+    "/Workspace/Users/thejasthejas30@gmail.com/pyspark-data-pipeline/data/orders.csv",
     header=True,
     inferSchema=True
 )
