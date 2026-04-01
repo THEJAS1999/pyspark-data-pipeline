@@ -1,6 +1,10 @@
-# Bronze Layer - Load raw data
+# Bronze Layer
 
-df = spark.read.csv("/FileStore/orders.csv", header=True, inferSchema=True)
+df = spark.read.csv(
+    "/Workspace/Repos/your_email/pyspark-data-pipeline/data/orders.csv",
+    header=True,
+    inferSchema=True
+)
 
 df.write.format("delta") \
     .mode("overwrite") \
