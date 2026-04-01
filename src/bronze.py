@@ -1,5 +1,7 @@
 # Bronze Layer
 
+spark.sql("CREATE SCHEMA IF NOT EXISTS pyspark_pipeline")
+
 df = spark.read.csv(
     "/Workspace/Users/thejasthejas30@gmail.com/pyspark-data-pipeline/data/orders.csv",
     header=True,
@@ -8,4 +10,4 @@ df = spark.read.csv(
 
 df.write.format("delta") \
     .mode("overwrite") \
-    .saveAsTable("bronze_orders")
+    .saveAsTable("pyspark_pipeline.bronze_orders")

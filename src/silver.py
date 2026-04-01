@@ -2,7 +2,7 @@
 
 from pyspark.sql.functions import col
 
-bronze_df = spark.table("bronze_orders")
+bronze_df = spark.table("pyspark_pipeline.bronze_orders")
 
 silver_df = bronze_df.withColumn(
     "total_sales",
@@ -11,4 +11,4 @@ silver_df = bronze_df.withColumn(
 
 silver_df.write.format("delta") \
     .mode("overwrite") \
-    .saveAsTable("silver_orders")
+    .saveAsTable("pyspark_pipeline.silver_orders")
