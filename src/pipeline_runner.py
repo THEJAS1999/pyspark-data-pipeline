@@ -8,3 +8,6 @@ exec(open("/Workspace/Users/thejasthejas30@gmail.com/pyspark-data-pipeline/src/s
 
 # Gold
 exec(open("/Workspace/Users/thejasthejas30@gmail.com/pyspark-data-pipeline/src/gold.py").read())
+
+# Data Quality Checks
+exec(open("/Workspace/Users/thejasthejas30@gmail.com/pyspark-data-pipeline/src/data_quality.py").read())
